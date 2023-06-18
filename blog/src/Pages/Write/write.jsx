@@ -19,13 +19,9 @@ export default function Write() {
       categories,
     }
     if(file){
-      const data={
-        file:file,
-        name:file.name
-      }
       console.log(data);
       try{
-        const up=await axiosInstance.post("/upload",data);
+        const up=await axiosInstance.post("/upload",file);
         newPost.photo=up.url;
         console.log(up);
       }catch(err){console.log(err)}

@@ -21,12 +21,8 @@ export default function Settings() {
       username,email,password
     }
     if(file){
-      const data={
-        file:file,
-        name:file.name
-      }
       try{
-        const up=await axiosInstance.post("/upload",data);
+        const up=await axiosInstance.post("/upload",file);
         updatedUser.profilePicture=up.url;
       }catch(err){
         console.log(err);
