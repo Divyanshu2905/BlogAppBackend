@@ -21,17 +21,26 @@ export default function Write() {
     if(file){
       console.log(file);
       const data= new FormData();
-      const filename=Date.now()+file.name;
-      data.append("name",filename)
       data.append("file",file)
-      console.log("1");
-      console.log(data);
-      try{
-        const up=await axiosInstance.post("/upload",data);
-        newPost.photo=up.url;
-        console.log("3");
-        console.log(up);
-      }catch(err){console.log(err)}
+      data.append("upload_preset","w8o6gy41")
+      data.append("cloud_namme","dhvvzezqj")
+      fetch("https://api.cloudinary.com/v1_1/dhvvzezqj/image/upload",{
+        method:"post",
+        body:data
+      }).then((res)=>res.json())
+      .then((data)=>{
+        newPost.photo=data.url;
+      }).catch((err)=>{
+        console.log(err);
+      })
+      // console.log("1");
+      // console.log(data);
+      // try{
+      //   const up=await axiosInstance.post("/upload",data);
+      //   newPost.photo=up.url;
+      //   console.log("3");
+      //   console.log(up);
+      // }catch(err){console.log(err)}
     }
     const category={
       name:categories[0],
