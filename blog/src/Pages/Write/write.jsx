@@ -26,7 +26,8 @@ export default function Write() {
       try{
         const up=await axiosInstance.post("/upload",data);
         newPost.photo=up.url;
-      }catch(err){}
+        console.log(up);
+      }catch(err){console.log(err)}
     }
     const category={
       name:categories[0],
