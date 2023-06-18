@@ -23,6 +23,7 @@ export default function Write() {
       const filename=Date.now()+file.name;
       data.append("name",filename)
       data.append("file",file)
+      console.log(data);
       try{
         const up=await axiosInstance.post("/upload",data);
         newPost.photo=up.url;
