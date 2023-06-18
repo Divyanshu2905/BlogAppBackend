@@ -29,6 +29,7 @@ export default function Write() {
         body:data
       }).then((res)=>res.json())
       .then((data)=>{
+        console.log(data);
         newPost.photo=data.url;
       }).catch((err)=>{
         console.log(err);
