@@ -9,7 +9,7 @@ cloudinary.config({
 })
 
 
-router.put("/", async(req,res)=>{
+router.post("/", async(req,res)=>{
     const newPhoto=req.body;
     try{
         const savedPhoto=cloudinary.uploader.upload(newPhoto.file);
