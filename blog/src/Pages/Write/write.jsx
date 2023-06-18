@@ -19,12 +19,14 @@ export default function Write() {
       categories,
     }
     if(file){
-      console.log(file);
+      const data= new FormData();
+      const filename=Date.now()+file.name;
+      data.append("name",filename)
+      data.append("file",file)
+      newPost.photo=filename;
       try{
-        const up=await axiosInstance.post("/upload",file);
-        newPost.photo=up.url;
-        console.log(up);
-      }catch(err){console.log(err)}
+        await axiosInstance.post("/upload",data);
+      }catch(err){}
     }
     const category={
       name:categories[0],

@@ -9,14 +9,8 @@ const catRoute=require("./routes/categories")
 const uploadRoute=require("./routes/upload")
 const path=require("path");
 const multer=require("multer");
-const cloudinary=require('cloudinary').v2;
 dotenv.config();
 const PORT=process.env.PORT;
-cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key:process.env.API_KEY,
-    api_secret:process.env.API_SECRET
-})
 app.use(express.json());
 app.use("/images",express.static(path.join(__dirname,"/images")))
 mongoose.connect(process.env.MONGO_URL).then(console.log("connected")).catch((err)=>console.log(err));
