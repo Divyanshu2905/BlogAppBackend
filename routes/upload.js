@@ -11,6 +11,7 @@ cloudinary.config({
 
 router.post("/", async(req,res)=>{
     const newPhoto=req.body;
+    console.log(newPhoto);
     try{
         const savedPhoto=cloudinary.uploader.upload(newPhoto.file);
         res.status(200).json(savedPhoto);
