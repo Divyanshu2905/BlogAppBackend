@@ -16,3 +16,5 @@ router.put("/", async(req,res)=>{
         res.status(200).json(savedPhoto);
     }catch(err){console.log(err)}
 })
+
+module.exports=router;
