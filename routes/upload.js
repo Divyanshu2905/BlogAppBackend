@@ -13,7 +13,9 @@ router.post("/", async(req,res)=>{
     const newPhoto=req.body;
     console.log(newPhoto);
     try{
-        const savedPhoto=cloudinary.uploader.upload(newPhoto);
+        const savedPhoto=cloudinary.uploader.upload(newPhoto,{
+            resource_type: "auto",
+        });
         res.status(200).json(savedPhoto);
         console.log(savedPhoto);
     }catch(err){console.log(err)}
