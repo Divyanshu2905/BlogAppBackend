@@ -31,6 +31,12 @@ app.use("/api/users",userRoute);
 app.use("/api/posts",postRoute);
 app.use("/api/categories",catRoute);
 
+app.use(express.static(path.join(__dirname, "/blog/build")));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/blog/build', 'index.html'));
+});
+
 app.listen(PORT || 5000,()=>{
     console.log("server running")
 })
