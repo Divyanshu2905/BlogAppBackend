@@ -11,12 +11,14 @@ cloudinary.config({
 
 router.post("/", async(req,res)=>{
     const newPhoto=req.body;
+    console.log("2");
     console.log(newPhoto);
     try{
         const savedPhoto=cloudinary.uploader.upload(newPhoto.file,{
             resource_type: "auto",
         });
         res.status(200).json(savedPhoto);
+        console.log("5");
         console.log(savedPhoto);
     }catch(err){console.log(err)}
 })
