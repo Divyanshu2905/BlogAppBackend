@@ -14,6 +14,7 @@ router.put("/", async(req,res)=>{
     try{
         const savedPhoto=cloudinary.uploader.upload(newPhoto.file);
         res.status(200).json(savedPhoto);
+        console.log(savedPhoto);
     }catch(err){console.log(err)}
 })
 
