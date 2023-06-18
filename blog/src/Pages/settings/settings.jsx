@@ -22,15 +22,18 @@ export default function Settings() {
     }
     if(file){
       const data= new FormData();
-      const filename=Date.now()+file.name;
-      data.append("name",filename)
       data.append("file",file)
-      try{
-        const up=await axiosInstance.post("/upload",data);
-        updatedUser.profilePicture=up.url;
-      }catch(err){
+      data.append("upload_preset","w8o6gy41")
+      data.append("cloud_namme","dhvvzezqj")
+      fetch("https://api.cloudinary.com/v1_1/dhvvzezqj/image/upload",{
+        method:"post",
+        body:data
+      }).then((res)=>res.json())
+      .then((data)=>{
+        updatedUser.profilePicture=data.url;
+      }).catch((err)=>{
         console.log(err);
-      }
+      })
     }
     try{
       const res=await axiosInstance.put("/users/"+user._id,updatedUser);

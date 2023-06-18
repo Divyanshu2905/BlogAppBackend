@@ -29,19 +29,10 @@ export default function Write() {
         body:data
       }).then((res)=>res.json())
       .then((data)=>{
-        console.log(data);
         newPost.photo=data.url;
       }).catch((err)=>{
         console.log(err);
       })
-      // console.log("1");
-      // console.log(data);
-      // try{
-      //   const up=await axiosInstance.post("/upload",data);
-      //   newPost.photo=up.url;
-      //   console.log("3");
-      //   console.log(up);
-      // }catch(err){console.log(err)}
     }
     const category={
       name:categories[0],

@@ -21,7 +21,6 @@ export default function Singlepost() {
       setdescrip(res.data.descrip);
     }
     getPost();
-    console.log(post);
   },[path])
   const PF="https://blog-backend-r0du.onrender.com/images/";
 
