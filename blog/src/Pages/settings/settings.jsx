@@ -22,12 +22,11 @@ export default function Settings() {
     }
     if(file){
       const data= new FormData();
-      const filename=Date.now()+file.name;
-      data.append("name",filename)
+      data.append("name",file.name)
       data.append("file",file)
-      updatedUser.profilePicture=PF+filename;
       try{
-        await axiosInstance.post("/upload",data);
+        const up=await axiosInstance.post("/upload",data);
+        updatedUser.profilePicture=up.url;
       }catch(err){
         console.log(err);
       }

@@ -20,12 +20,11 @@ export default function Write() {
     }
     if(file){
       const data= new FormData();
-      const filename=Date.now()+file.name;
-      data.append("name",filename)
+      data.append("name",file.name)
       data.append("file",file)
-      newPost.photo=filename;
       try{
-        await axiosInstance.post("/upload",data);
+        const up=await axiosInstance.post("/upload",data);
+        newPost.photo=up.url;
       }catch(err){}
     }
     const category={
