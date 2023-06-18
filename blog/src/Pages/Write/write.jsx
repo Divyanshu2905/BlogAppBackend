@@ -19,6 +19,7 @@ export default function Write() {
       categories,
     }
     if(file){
+      console.log(file);
       const data= new FormData();
       const filename=Date.now()+file.name;
       data.append("name",filename)
