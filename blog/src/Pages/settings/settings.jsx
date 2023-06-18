@@ -25,7 +25,7 @@ export default function Settings() {
       data.append("file",file)
       data.append("upload_preset","w8o6gy41")
       data.append("cloud_namme","dhvvzezqj")
-      fetch("https://api.cloudinary.com/v1_1/dhvvzezqj/image/upload",{
+      await fetch("https://api.cloudinary.com/v1_1/dhvvzezqj/image/upload",{
         method:"post",
         body:data
       }).then((res)=>res.json())
