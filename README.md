@@ -1,5 +1,5 @@
 
-# Blog Site
+# [Blog Site](https://blog-backend-r0du.onrender.com)
 
 The project involves creating a dynamic blog website using the MERN stack, which stands for MongoDB, Express.js, React, and Node.js. The website will provide a platform for users to create, read, update, and delete blog posts. Additionally, the project will incorporate image uploads using Cloudinary and will be hosted on Render.com.
 
@@ -13,7 +13,6 @@ To ensure the website is accessible to users, it will be hosted on Render.com, a
 
 Overall, this project combines the power of the MERN stack for building a full-stack web application, with image uploads handled by Cloudinary, and hosting provided by Render.com. The end result will be a fully functional and visually appealing blog website that allows users to share and engage with blog posts seamlessly.
 
-## Website Link: [Blog](https://blog-backend-r0du.onrender.com)
 
 
 
